@@ -44,6 +44,9 @@ form.addEventListener('submit', (e) => {
         })
     } else {
         calc(+inputs[0].value, +inputs[1].value);
+        labels.forEach(label => {
+            label.innerHTML = 'YOU NEED TO ENTER A NUMBER';
+        })
     }
     
 })
