@@ -1,7 +1,8 @@
 const form = document.querySelector('form'),
       inputs = document.querySelectorAll('input'),
       select = document.querySelector('select'),
-      result = document.querySelector('.result');
+      result = document.querySelector('.result'),
+      labels = document.querySelectorAll('label');
 
 function calc(value1, value2) {
     switch (select.value) {
@@ -38,7 +39,9 @@ form.addEventListener('submit', (e) => {
     e.preventDefault();
     if(inputs[0].value === '' || inputs[1].value === '') {
         clear();
-        alert('PLEASE FILL IN BOTH INPUT FIELDS')
+        labels.forEach(label => {
+            label.innerHTML = 'PLEASE FILL IN BOTH INPUT FIELDS';
+        })
     } else {
         calc(+inputs[0].value, +inputs[1].value);
     }
